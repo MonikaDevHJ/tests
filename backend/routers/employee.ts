@@ -1,7 +1,46 @@
 import express from "express";
+import { z } from "zod";
+import { api } from "./utils/api";
 
-export const employeeRouter = express.Router();
 
+const createempno = api.fieldoptions.empno.useMutation();
+  const createbirthname = api.fieldoptions.createOnebirthname.useMutation();
+  const createfirstaname = api.fieldoptions.createOnefirstname.useMutation();
+  const createLastname = api.fieldoptions.createOnelastname.useMutation();
+  const createdegree = api.fieldoptions.createOneDegree.useMutation();
+  const createHiredate = api.fieldoptions.createOneHiredate.useMutation();
+  const createcureentpositioin = api.fieldoptions.createcureentpositioin.useMutation();
+  const createtitlehistory =api.fieldoptions.createOnetitlehistory.useMutation();
+  const createsalaryhistory =api.fieldoptions.createsalaryhistory.useMutation();
+
+
+export let employerRouter = createTRPCRouter({
+    createEmployer: protectedProcedure
+      .input(
+        z.object({
+          empno: z.string(),
+          birt_name: z.string(),
+          first_name: z.string(),
+          last_name: z.string(),
+          gender: z.string(),
+          hiredate: z.string(),
+          companyLocation: z.string(),
+          profile_pic_key: z.string(),
+          employer_pic_key: z.string(),
+          subscribed: z.string(),
+        })
+      ),
+
+export const employerRouter = express.Router(),
+
+
+    function createTRPCRouter(arg: unknown) {
+        throw new Error("Function not implemented.");
+    }
+
+    function createTRPCRouter(arg: any, unknown: any) {
+        throw new Error("Function not implemented.");
+    }
 // 1.
 // get an employee's basic details, i.e their
 // emp_no

@@ -1,0 +1,19 @@
+model Employer {
+  empno              String  @id
+  birt_name          String  @unique
+  first_name         String  @unique
+  last_name          String
+  gender             String  @unique
+  hiredate            String
+  salaryhistory      String
+  departmentdetails   String
+  departmentmanager   String? // YES OR NO
+
+  
+  
+}
+
+enum EJobClassification {
+  it
+  nonit
+}
